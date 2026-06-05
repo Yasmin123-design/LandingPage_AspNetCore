@@ -26,9 +26,21 @@ namespace LandingPageTask
             builder.Services.AddCors(options =>
             {
                 options.AddPolicy("AllowAngular", policy =>
-                    policy.WithOrigins("http://localhost:4200")
-                          .AllowAnyHeader()
-                          .AllowAnyMethod());
+                    policy.WithOrigins(
+                        "http://localhost:4200",
+                        "https://landing-page-angular-beta.vercel.app"
+                    )
+                    .AllowAnyHeader()
+                    .AllowAnyMethod());
+            }); builder.Services.AddCors(options =>
+            {
+                options.AddPolicy("AllowAngular", policy =>
+                    policy.WithOrigins(
+                        "http://localhost:4200",
+                        "https://landing-page-angular-beta.vercel.app"
+                    )
+                    .AllowAnyHeader()
+                    .AllowAnyMethod());
             });
 
             var app = builder.Build();
