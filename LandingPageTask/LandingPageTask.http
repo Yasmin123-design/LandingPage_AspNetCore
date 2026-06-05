@@ -1,0 +1,6 @@
+@LandingPageTask_HostAddress = http://localhost:5216
+
+GET {{LandingPageTask_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
